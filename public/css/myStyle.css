@@ -1,0 +1,246 @@
+/* 
+    Created on : Sep 29, 2015, 1:23:40 PM
+    Author     : PHQ
+*/
+
+/* Error display when resize browser
+ * Review min-with, max-width & min-height, max-height of each elements
+ */
+
+
+/** {border: 1px solid black;}*/
+
+body, header, section, footer, form, table {width: 100%; height: 100%; margin: auto;}
+
+header  {height: 20%;}
+section {height: 65%;}
+footer  {height:  5%; display: table; /*border: 1px solid red;*/}
+form    {width: 60%;}
+input   {margin: 1px 1px 1px 1px;}
+
+body {
+    /*Review body width size & unknown element in html*/
+    /*border: 1px solid red;*/
+    font-size: 17px;
+    font-family: "Times New Roman";
+    text-align: center;
+}
+
+#header-content {
+    margin: auto;
+    height: 100%;
+}
+#header-content .title {
+    color: #FF3333;
+    font-size: 45px;
+    text-align: center;
+    text-shadow: 0 1px 0 #660000,
+                 0 2px 0 #800000,
+                 0 0 5px rgba(0,0,0,.1),
+                 0 1px 3px rgba(0,0,0,.3),
+                 0 3px 5px rgba(0,0,0,.2),
+                 0 5px 10px rgba(0,0,0,.25);
+}
+#header-content .left {
+    text-align: right;
+    width: 18%;
+}
+#header-content .middle {
+    text-align: center;
+    width: 60%;
+}
+#header-content .right {
+    text-align: left;
+    width: 18%;
+}
+
+/*section {border: 1px solid pink;}*/
+
+section #myForm {
+    /*border: 1px solid red;*/
+/*  display: table-cell;
+    vertical-align: middle;*/
+}
+
+
+section input {height: 35px; width: 100%}
+
+section .top {width: 100%; display: table;}
+section .mid {width: 100%; /*display: table;*/}
+section .bot {width: 100%; /*display: table;*/ height: 80%;} /*Review*/
+
+section .top .Categorys {float:left; display: inline; width: 25%;}
+section .top .Keywords  {float:left; display: inline; width: 55%;}
+section .top .Actions   {float:left; display: inline; width: 16%;}
+section .top .ColSpace  {float:left; display: inline; width: 02%;}
+
+section .top #txtKeyword {padding: 8px 8px 8px 8px;}
+section .top #txtCategory {padding: 4px 8px 8px 8px;}
+
+section #btnSubmit, #btnContinue {
+    width: 100%;
+    
+    margin: 1px 1px 1px 1px;
+    
+    -webkit-appearance: none;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 6px;
+
+    color: #555;
+    font-weight:bold;
+    
+    display: inline-block;
+    border: 1px solid #666 ;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-bottom-width: 2px;
+}
+section #btnSubmit:hover, #btnContinue:hover {
+    background-color: white;
+    color: #f60909;
+    cursor: pointer;
+}
+
+.RowSpace {height: 13px;}
+
+section .mid input  {
+    width:auto;
+    height:auto;
+    vertical-align: text-top;
+}
+section .mid span {font-weight: normal; color: #aaa;}
+
+section #DivTxTArea {
+    -moz-appearance: textfield-multiline;
+    -webkit-appearance: textarea;
+
+    text-align: justify;
+    font: medium -moz-fixed;
+    font: -webkit-small-control;
+	
+    resize: none;
+    height: 100%;
+    width: 100%;
+    margin: 1px 1px 1px 1px;    
+    padding: 8px 8px 8px 8px;
+    /*padding: 1px 1px 1px 1px;*/
+    border: 1px solid gray;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    -ms-overflow-style: auto;
+}
+section #DivTxTArea * {    
+    font-size: 17px;
+    font-family: "Times New Roman" ;
+}
+section #DivTxTArea a {
+    text-decoration: underline;
+    cursor: pointer;
+}
+section #DivTxTArea .mark, section #DivTxTArea mark {
+    padding: inherit;
+    background-color: inherit;
+    color: inherit;
+}
+
+.Times {
+    color: gray;
+    width: 57%;
+    margin: auto;
+    text-align: right;
+}
+
+footer #footer-content {
+    display: table-cell;
+    vertical-align: middle;
+}
+footer, #myUrl:link {  
+    font-size: small;
+    text-decoration: none;
+    color : black;
+}
+
+/* Place holder of DivTxtArea. Review with another web browser */
+[contentEditable]:empty:not(:focus):before{
+    font-size: 17px;
+    font-family: "Times New Roman" ;
+    content:attr(data-ph);
+    color: #aaa;
+}
+
+/*Modal loader when ajax loading. Review */
+.modal-loader {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('../image/ajax-loader-32x32.gif') 
+                50% 50% 
+                no-repeat;
+}
+ 
+body .loading {
+    overflow: hidden;   
+}
+
+body .loading .modal-loader {
+    display: block;
+}
+/*End modal loader*/
+
+/*Modal compare paragraphs*/
+#contain-my-modal .modal-dialog {
+    width: 60%;
+    max-height: 55%;    
+    margin-top: 7%;
+}
+
+#contain-my-modal .modal-header {
+    background-color: rgba(0,0,0,.1);
+    padding: 0px 12px 0px 12px;
+}
+#contain-my-modal .modal-header .left {
+    width: 90%;
+    text-align: left;
+}
+#contain-my-modal .modal-header .midd {}
+#contain-my-modal .modal-header .right b {color: red;}
+#contain-my-modal .modal-header .right .close:hover {color: red;}
+
+#contain-my-modal .modal-body {
+    height: 100%;
+    text-align: justify;
+    overflow: auto;
+    padding: 12px 12px 12px 12px;
+}
+#contain-my-modal .modal-body table {    
+    margin: auto;
+    width: 100%;
+}
+#contain-my-modal .modal-body .midd { border: 1px solid rgba(0,0,0,.1); }
+#contain-my-modal .modal-body .left {    
+    vertical-align: top;
+    width: 50%;
+    padding-right: 12px;
+}
+#contain-my-modal .modal-body .right {
+    vertical-align: top;
+    width: 50%;
+    padding-left: 12px;
+}
+
+.modal-content mark, .modal-content .mark {
+    padding: 0.5px;
+    background-color: #ff0;
+}
+
+.modal_content a:focus, .modal_content a:active, .modal_content a:hover {
+    color: #23527c;
+    text-decoration: none;
+}
